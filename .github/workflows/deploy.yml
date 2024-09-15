@@ -42,10 +42,10 @@ jobs:
         AWS_REGION: 'us-east-1'  # Substitua pela região correta
       run: |
         aws elasticbeanstalk create-application-version \
-          --application-name "novoprojeto" \
+          --application-name "nodeteste" \
           --version-label $GITHUB_SHA \
           --source-bundle S3Bucket="bucket-eb",S3Key="deploy.zip"
         aws elasticbeanstalk update-environment \
-          --application-name "novoprojeto" \
-          --environment-name "novoprojeto-env" \
+          --application-name "nodeteste" \
+          --environment-name "nodeteste-env" \
           --version-label $GITHUB_SHA
